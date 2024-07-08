@@ -1,7 +1,7 @@
 import { ExtensionContext, commands, window } from "vscode"
 import { logger } from "./logger"
 import { registry_commands } from "./command"
-import { load_config } from "./config"
+import { init_config } from "./config"
 import { set_proxy } from "./proxy"
 
 export const activate = async function(context: ExtensionContext) {
@@ -10,7 +10,7 @@ export const activate = async function(context: ExtensionContext) {
     try {
 
         // 加载配置
-        load_config()  
+        init_config(context)  
         
         // 设置软件代理
         await Promise.all([set_proxy()])
