@@ -12,6 +12,7 @@ export class CreateOpenAiChat extends AiInteraction {
         super(config)
         this.openai = new OpenAI({
             apiKey: this.api_key,
+            maxTokens: 5000,
             configuration: {
                 baseURL: this.baseurl
             }

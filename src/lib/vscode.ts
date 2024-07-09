@@ -5,18 +5,21 @@ import { join, parse, ParsedPath } from "path";
 export type EditorInfo = {
     document: TextDocument,
     path: ParsedPath,
-    content: string
+    content: string,
+    language: string, 
 }
 export const get_active_editor_info = function(): EditorInfo {
     const active_editor = window.activeTextEditor
     if (!active_editor) throw new Error("error.404.active-editor")
     const document = active_editor.document
+    document.languageId
     const selection = active_editor.selection
     
     return {
         document,
         path: parse(document.fileName),
         content: document.getText(selection.isEmpty ? void 0 : selection),
+        language: document.languageId,
     }
 }
 
