@@ -17,9 +17,12 @@ export abstract class CommandAdapth {
         this.context.subscriptions.push(dispose);
     }
     abstract invoke(...args: any[]): Promise<void>;
-    private execute(...args: any[]) {
-        this.invoke(...args).catch((err) => {
+    private async execute(...args: any[]) {
+        try {
+            await this.invoke(...args)
+        } catch (err) {
+            if (err === "error.404.active-editor") window.showErrorMessage("No active editor found.");
             logger.error(err)
-        });
+        }
     }
 }

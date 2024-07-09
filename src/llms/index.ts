@@ -49,4 +49,8 @@ export abstract class AiInteraction {
         return this.send(prompt)
     }
 
+    public finish() {
+        this.state = AiState.finish
+    }
+
 }
