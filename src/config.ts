@@ -3,7 +3,7 @@ import { ExtensionContext, workspace, WorkspaceConfiguration } from "vscode"
 
 
 export interface Config {
-    apiKey?: string,
+    api_key?: string,
     model: string,
     baseurl?: string,
 }
@@ -36,12 +36,12 @@ export class AppConfig implements Config {
         return this._baseurl = this._workspace_configuration.get<string>("baseurl")!
     }
 
-
     constructor(app_name: string = AppConfig.app_name,  context: ExtensionContext) {
         this._app_name = app_name
         this._workspace_configuration = workspace.getConfiguration(app_name)
         this.context = context
     }
+
 }
 
 export let config: AppConfig
