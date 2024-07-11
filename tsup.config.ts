@@ -16,7 +16,6 @@ export default defineConfig((options: Options) => {
         minify: options.watch ? false : true,
         sourcemap: options.watch ? true : false,
         target: "es2018",
-        splitting: true,
         esbuildOptions(option, context) {
             option.external = [
                 "vscode",

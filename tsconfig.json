@@ -1,58 +1,26 @@
 {
+    "$schema": "https://json.schemastore.org/tsconfig",
     "compilerOptions": {
-        "lib": [
-            "esnext"
-        ],
-        "module": "ESNext",
-        "moduleResolution": "Node",
-        "resolveJsonModule": true,
-        "removeComments": true,
-        "preserveConstEnums": true,
-        "strict": true,
-        "alwaysStrict": true,
-        "strictNullChecks": true,
-        "noUncheckedIndexedAccess": true,
-        "noImplicitAny": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "noUnusedLocals": false,
-        "noUnusedParameters": false,
-        "allowUnreachableCode": false,
-        "noFallthroughCasesInSwitch": true,
+        "diagnostics": true,
         "target": "ESNext",
-        "outDir": "dist",
-        "sourceMap": true,
+        "module": "CommonJS",
+        "rootDir": "src",
+        "useDefineForClassFields": true,
+        "lib": ["ESNext"],
+        "baseUrl": ".",
+        "declaration": false,
+        "allowJs": false,
+        "skipLibCheck": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
-        "allowJs": true,
-        "checkJs": true,
-        "skipLibCheck": true,
-        "skipDefaultLibCheck": true,
+        "strict": true,
         "forceConsistentCasingInFileNames": true,
-        "noEmit": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
         "isolatedModules": true,
-        "incremental": true,
-        "useDefineForClassFields": true,
-        "baseUrl": ".",
-        "paths": {
-            "src/*": [
-                "./src/*"
-            ]
-        }
+        "outDir": "dist",
+        "listFiles": true
     },
-    "include": [
-        "**/*.ts",
-        "src/**/*.json",
-        "*.json",
-        "*.ts",
-        "*.js",
-        "*.cjs",
-        "*.mjs"
-        , "farm.config.ts"
-    ],
-    "exclude": [
-        "**/dist/**",
-        "**/node_modules/**",
-        "cz-adapter.cjs"
-    ]
+    "include": ["src/*.ts", "src/**/*.ts"],
+    "exclude": ["node_modules"]
 }

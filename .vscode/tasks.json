@@ -5,7 +5,7 @@
     "tasks": [
         {
             "type": "npm",
-            "script": "dev",
+            "script": "dev:tsup",
             "group": "build",
             "isBackground": true,
             "problemMatcher": {
@@ -28,7 +28,38 @@
                     "message": 5
                 }
             },
-            "label": "npm: dev",
+            "label": "npm: tsup-dev",
+            "presentation": {
+                "group": "watch",
+                "reveal": "never"
+            }
+        },
+        {
+            "type": "npm",
+            "script": "dev:tsc",
+            "group": "build",
+            "isBackground": true,
+            "problemMatcher": {
+                "background": {
+                    "activeOnStart": false,
+                    "beginsPattern": "Files",
+                    "endsPattern": "Total time: "
+                },
+                "owner": "echo",
+                "fileLocation": [
+                    "relative",
+                    "{workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },
+            "label": "npm: tsc-dev",
             "presentation": {
                 "group": "watch",
                 "reveal": "never"
