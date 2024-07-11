@@ -32,7 +32,7 @@ export class AppConfig implements Config {
 
     private _custom_model: string = ""
     public get custom_model() {
-        return this.config_getter("baseurl")
+        return this.config_getter("custom_model")
     }
 
     private _baseurl: string = ""
