@@ -5,7 +5,7 @@
     "tasks": [
         {
             "type": "npm",
-            "script": "dev:tsup",
+            "script": "tsup:dev",
             "group": "build",
             "isBackground": true,
             "problemMatcher": {
@@ -36,7 +36,7 @@
         },
         {
             "type": "npm",
-            "script": "dev:tsc",
+            "script": "tsc:dev",
             "group": "build",
             "isBackground": true,
             "problemMatcher": {

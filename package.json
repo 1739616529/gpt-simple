@@ -10,11 +10,10 @@
         "url": "https://github.com/1739616529/gpt-simple"
       },
     "scripts": {
-        "dev:tsc": "tsc --watch",
-        "dev:tsup": "tsup --watch",
-        "build": "tsup",
-        "postinstall": "esno ./script/preinstall.dev",
-        "pack": "vsce package -o dist/gpt-simple.vsix --no-dependencies"
+        "tsup:dev": "tsup --watch",
+        "tsup:build": "tsup",
+        "tsip:pack": "vsce package -o dist/gpt-simple.vsix --no-dependencies",
+        "postinstall": "esno ./script/preinstall.dev"
     },
     "activationEvents": [
         "onStartupFinished"
@@ -24,6 +23,14 @@
     "license": "ISC",
     "resolutions": {
         "@langchain/core": "0.2.14"
+    },
+    "dependencies": {
+        "log4js": "^6.9.1",
+        "langchain": "^0.2.8",
+        "get-proxy-settings": "^0.1.13",
+        "global-agent": "^3.0.0",
+        "openai": "^4.52.3",
+        "undici": "^6.19.2"
     },
     "devDependencies": {
         "@langchain/openai": "^0.2.1",
@@ -35,16 +42,10 @@
         "@vscode/vsce": "^2.29.0",
         "esno": "^4.7.0",
         "fs-extra": "^11.2.0",
-        "get-proxy-settings": "^0.1.13",
-        "global-agent": "^3.0.0",
-        "langchain": "^0.2.8",
-        "log4js": "^6.9.1",
-        "openai": "^4.52.3",
         "radash": "^12.1.0",
         "shelljs": "^0.8.5",
         "tsup": "^8.1.0",
         "typescript": "^5.5.3",
-        "undici": "^6.19.2",
         "vite": "^5.3.3",
         "vitest": "^1.6.0"
     },
@@ -87,6 +88,7 @@
                 "gpt-simple.model": {
                     "enumItemLabels": [
                         "openAI gpt-4",
+                        "openAI gpt-4o",
                         "openAI gpt-4-32k",
                         "openAI gpt-3.5-turbo",
                         "openAI gpt-3.5-turbo-16k"
@@ -94,6 +96,7 @@
                     "type": "string",
                     "enum": [
                         "gpt-4",
+                        "gpt-4o",
                         "gpt-4-32k",
                         "gpt-3.5-turbo",
                         "gpt-3.5-turbo-16k"

@@ -10,6 +10,25 @@ overrides:
 importers:
 
   .:
+    dependencies:
+      get-proxy-settings:
+        specifier: ^0.1.13
+        version: 0.1.13
+      global-agent:
+        specifier: ^3.0.0
+        version: 3.0.0
+      langchain:
+        specifier: ^0.2.8
+        version: 0.2.8(cheerio@1.0.0-rc.12)(ignore@5.3.1)(openai@4.52.3)(ws@8.18.0)
+      log4js:
+        specifier: ^6.9.1
+        version: 6.9.1
+      openai:
+        specifier: ^4.52.3
+        version: 4.52.3
+      undici:
+        specifier: ^6.19.2
+        version: 6.19.2
     devDependencies:
       '@langchain/openai':
         specifier: ^0.2.1
@@ -38,24 +57,6 @@ importers:
       fs-extra:
         specifier: ^11.2.0
         version: 11.2.0
-      get-proxy-settings:
-        specifier: ^0.1.13
-        version: 0.1.13
-      global-agent:
-        specifier: ^3.0.0
-        version: 3.0.0
-      langchain:
-        specifier: ^0.2.8
-        version: 0.2.8(cheerio@1.0.0-rc.12)(ignore@5.3.1)(openai@4.52.3)(ws@8.18.0)
-      log4js:
-        specifier: ^6.9.1
-        version: 6.9.1
-      openai:
-        specifier: ^4.52.3
-        version: 4.52.3
-      punycode:
-        specifier: ^2.3.1
-        version: 2.3.1
       radash:
         specifier: ^12.1.0
         version: 12.1.0
@@ -68,9 +69,6 @@ importers:
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
-      undici:
-        specifier: ^6.19.2
-        version: 6.19.2
       vite:
         specifier: ^5.3.3
         version: 5.3.3(@types/node@20.14.10)
