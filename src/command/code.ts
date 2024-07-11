@@ -1,10 +1,10 @@
 
 import { CommandAdapth } from "./lib"
-import { logger } from "src/logger";
-import { config } from "src/config";
+import { logger } from "../logger";
+import { config } from "../config";
 import { CreateOpenAiChat } from "../llms/openai"
 import { workspace } from "vscode";
-import { create_temp_file, get_active_editor_info, set_document_content } from "src/lib/vscode";
+import { create_temp_file, get_active_editor_info, set_document_content } from "../lib/vscode";
 import { env } from "vscode"
 export class CodeComment extends CommandAdapth {
     command_id: string = "dys.codeHelper";
